@@ -1,0 +1,35 @@
+<% if false %>
+<div class="row">
+
+<%= simple_form_for :query, :url => {:action => :search_result, :controller => "/query"}, html: {class: "col-lg-6"} do |f| %>
+    <%= f.input :keyword, :label => false %>
+  <span class="input-group-btn">
+    <%= f.button :submit, "Search" %>
+  </span>
+<% end %>
+</div>
+
+<div class="row">
+  <div class="col-lg-6">
+    <div class="input-group">
+      <input type="text" class="form-control">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Go!</button>
+      </span>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+</div><!-- /.row -->
+<% end %>
+
+
+<div class="input-group" align="center" >
+    <div class="form-inline">
+      <%= form_tag(query_search_result_path) do %>
+      <%= text_field_tag('keyword', nil, :placeholder=> "Enter book name") %> 
+      <%= button_tag(type: "submit", class: "btn  btn-success ") do %>
+       Search 
+        <i class="icon-search"></i>
+      <% end %>
+    <% end %>
+    </div>
+</div>

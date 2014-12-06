@@ -1,0 +1,10 @@
+<center>
+<% if @result == "Type a book name" %>
+  <%= @result %>
+<% else %>
+  <%= @result.css(".item_select_allowance").each do |item|%>
+   <p> <%= item.text.strip %></p>
+  <% end %>
+  <%= @url %>
+<% end %>
+</center>
